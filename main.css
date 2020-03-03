@@ -1,0 +1,17 @@
+body, html {
+  width: 100%;
+  height: auto;
+  text-align: left;
+  float: left;
+  background-color: black;
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 16px;
+  position: relative;
+  letter-spacing: .01rem;
+  padding: 3rem;
+}
+
+.title-wrapper {
+  text-align: center;
+  color: white;
+}
