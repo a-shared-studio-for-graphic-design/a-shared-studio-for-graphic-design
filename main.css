@@ -29,7 +29,7 @@ h1 {
 .kv-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  height: 90%;
+  height: 88%;
   margin: 0;
   padding-top: 0.5rem;
 }
