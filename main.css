@@ -1,13 +1,19 @@
 body, html {
   width: 100%;
-  height: auto;
+  height: 100%;
   text-align: left;
   float: left;
-  background-color: black;
   font-family: 'Roboto Mono', sans-serif;
   font-size: 16px;
   position: relative;
   letter-spacing: .01rem;
+}
+
+body {
+  background-image: url('./images/studio.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 h1 {
@@ -18,4 +24,20 @@ h1 {
   margin-top: 2rem;
   text-align: center;
   color: white;
+}
+
+.kv-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 90%;
+  margin: 0;
+  padding-top: 0.5rem;
+}
+
+.kevin-side {
+  background-color: none;
+}
+
+.victor-side {
+  background-color: none;
 }
