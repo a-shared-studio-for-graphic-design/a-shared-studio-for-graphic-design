@@ -46,3 +46,9 @@ h1 {
 .victor-side {
   background-color: none;
 }
+
+.block {
+  width: 200px;
+  height: 120px;
+  background-color: white;
+}
