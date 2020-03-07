@@ -1,3 +1,4 @@
 $(document).ready(function () {
-        $('.block').draggable();
-})
+  $('.work-img').resizable();
+  $('.block').draggable();
+});
