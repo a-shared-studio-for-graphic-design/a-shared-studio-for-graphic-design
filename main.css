@@ -36,7 +36,7 @@ h1 {
   grid-template-columns: repeat(2, 1fr);
   height: 88%;
   margin: 0;
-  padding-top: 0.5rem;
+  padding-top: 0rem;
 }
 
 .kevin-side {
