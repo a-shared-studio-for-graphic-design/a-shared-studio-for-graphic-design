@@ -1,0 +1,130 @@
+<html lang="en">
+
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- main CSS -->
+    <link rel="stylesheet" href="main.css">
+    <!-- jQuery CSS -->
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+    <!-- <link rel="stylesheet" href="mqueries.css"> -->
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- favicon -->
+    <!-- <link rel='icon' href='favicon.png' type='image/x-icon'> -->
+
+    <title>test doc</title>
+
+  </head>
+
+  <style>
+  .draggable {
+    /* width: 200px;
+    height: 200px;
+    padding: 0.5em;
+    float: left;
+    margin: 0 10px 10px 0; */
+    display: inline-block;
+    cursor: move;
+    width: auto;
+    height: auto;
+}
+.draggable, a {
+    cursor:move;
+}
+#draggable, #draggable2 {
+    /* margin-bottom:20px; */
+    cursor:move;
+}
+#draggable {
+    cursor: move;
+}
+#draggable2 {
+    cursor: e-resize;
+}
+#containment-wrapper {
+    width: 1600px;
+    height:1000px;
+    border:2px solid #ccc;
+}
+h3 {
+    clear: left;
+}
+  </style>
+
+  <body>
+    <div id="containment-wrapper">
+    <div id="draggable" class="ui-widget-content draggable">
+      <img id="resizable" src="./images/test.png" alt="">
+    </div>
+    <div id="draggable" class="ui-widget-content draggable">
+      <img id="resizable" src="./images/test.png" alt="">
+    </div>
+    </div>
+  </body>
+
+
+
+  <!-- jQuery core -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <!-- jQuery UI -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+
+  <script>
+
+var positions = JSON.parse(localStorage.positions || "{}");
+var size = JSON.parse(localStorage.size || "{}");
+
+// console.log(Object.keys(positions));
+
+$(function () {
+var d = $("[id=draggable]").attr("id", function (i) {
+    return "draggable_" + i
+})
+
+console.log(Object.keys(positions));
+
+var r = $("[id=resizable]").attr("id", function (i) {
+    return "resizable_" + i
+})
+
+$.each(positions, function (id, pos) {
+    $("#" + id).css(pos);
+})
+
+$.each(size, function (id, siz) {
+    $("#" + id).css(siz);
+    // console.log(size);
+})
+
+d.draggable({
+    containment: "#containment-wrapper",
+    scroll: false,
+    stop: function (event, ui) {
+        positions[this.id] = ui.position
+        console.log(ui.position)
+        localStorage.positions = JSON.stringify(positions)
+    }
+});
+
+
+r.resizable({
+    containment: "#containment-wrapper",
+    scroll: false,
+    stop: function (event, ui) {
+        size[this.id] = ui.size
+        localStorage.size = JSON.stringify(size)
+    }
+
+});
+
+
+});
+  </script>
+</html>

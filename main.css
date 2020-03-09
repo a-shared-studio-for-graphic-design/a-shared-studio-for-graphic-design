@@ -41,14 +41,18 @@ h1 {
 
 .kevin-side {
   background-color: none;
+  text-align: left;
 }
 
 .victor-side {
   background-color: none;
+  text-align: right;
 }
 
 .block {
   display: inline-block;
+  cursor: move;
+  position: relative;
 }
 
 .timestamp {
