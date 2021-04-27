@@ -1,6 +1,6 @@
 body, html {
   width: 100%;
-  
+
   text-align: left;
   float: left;
   font-family: 'Roboto Mono', sans-serif;
@@ -41,7 +41,7 @@ h1 {
 .kv-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  height: 220%;
+  height: 300%;
   margin: 0;
   padding-top: 0rem;
 }
